@@ -1,0 +1,47 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "6ee0107f525a1b69ae326959e41eb59d",
+    "packages": [
+        {
+            "name": "voskhod/tech-extensions",
+            "version": "dev-develop",
+            "source": {
+                "type": "git",
+                "url": "https://git.voskhod-11.ru/voskhod/medo-3.0/libraries/composer-packages/tech-extensions.git",
+                "reference": "97ccc8c9cb3891d6b637c4171326620d59108031"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://git.voskhod-11.ru/api/v4/projects/122/packages/composer/archives/voskhod/tech-extensions.zip?sha=97ccc8c9cb3891d6b637c4171326620d59108031",
+                "reference": "97ccc8c9cb3891d6b637c4171326620d59108031",
+                "shasum": ""
+            },
+            "require": {
+                "php": "7.3.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Voskhod\\TechExtensions\\": "src/"
+                }
+            }
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": {
+        "voskhod/tech-extensions": 20
+    },
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": {
+        "php": "^7.3"
+    },
+    "platform-dev": [],
+    "plugin-api-version": "2.3.0"
+}

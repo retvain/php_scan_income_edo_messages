@@ -1,0 +1,36 @@
+version: '3.6'
+services:
+    medo_message_scanner_app:
+        volumes:
+            - ./:/var/www/medo_message_scanner_app
+        build:
+            context: ./docker/medo_message_scanner_app
+            args:
+                HOST_UID: 1000
+                TIMEZONE: 'Europe/Moscow'
+                PHP_VERSION: 7.3.19
+                DEPLOYMENT_PATH: '/var/www/medo_message_scanner_app'
+        ports:
+            - 9000
+        networks:
+            - medo-network
+
+    medo_db:
+        container_name: medo_db
+        image: postgres:11.10
+        restart: always
+        environment:
+            - TZ=Europe/Moscow
+            - POSTGRES_MULTIPLE_DATABASES=${DB_NAME}
+            - POSTGRES_USER=${DB_USERNAME}
+            - POSTGRES_PASSWORD=${DB_PASSWORD}
+        ports:
+            - 54321:5432
+        volumes:
+            - ./docker/postgres/:/docker-entrypoint-initdb.d/
+        networks:
+            - medo-network
+
+networks:
+    medo-network:
+        driver: bridge
